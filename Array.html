@@ -17,11 +17,72 @@
   width: 50%;
 }
         .jumbotron {
-            margin-left: 25px!important;
-            margin-right:25px!important;
+            margin-left: 160px!important;
+            margin-right:13px!important;
             
         }
-    </style>
+        body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 90%;
+  width: 140px;
+  margin-left: 9px!important;
+  position: fixed;
+  z-index: 1;
+  top: 80px;
+  left: 0;
+  background-color: #E8E8E8;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #009933;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color:    #E8E8E8;
+  color: green;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #FFFFFF;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 </style>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -67,8 +128,59 @@
 
 <body>
 
+<div class="sidenav">
+  <a href="#about">Questions<hr></a>
+  <button class="dropdown-btn">Beginner<hr>
+ 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Question 1<b><hr></b></a>
+    <a href="#">Question 1<hr></a>
+    <a href="#">Question 1<hr></a>
+  </div>
+  <button class="dropdown-btn">Intermediate<hr>
+ 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Question 1<hr></a>
+    <a href="#">Question 1<hr></a>
+    <a href="#">Question 1<hr></a>
+  </div>
+    <button class="dropdown-btn">Advance<hr>
+ 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Question 1<hr></a>
+    <a href="#">Question 1<hr></a>
+    <a href="#">Question 1<hr></a>
+  </div>
+  <a href="#contact">Next Page</a><hr>
+</div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header">
+
     <div class="container">
 
       <div id="logo" class="pull-left">
@@ -120,15 +232,38 @@
     </div>
   </section>--><!-- End Hero Section -->
     
+    <!-- Side navigation -->
+
+<!-- Page content -->
+<div class="main">
+  ...
+</div>
        <div class="jumbotron">
         <h1>
          Introduction
         </h1>
-        <h2><b>An array is a data structure that contains a group of elements. Typically these elements are all of the same data type, such as an integer or string. Arrays are commonly used in computer programs to organize data so that a related set of values can be easily sorted or searched.                                  
+        <h2><b>  An array is a collection of elements of the same type placed in contiguous memory locations that can be individually referenced by using an index to a unique identifier.
+
+Nine values of type int can be declared as an array without having to declare Nine different variables (each with its own identifier).
+
+For example, a Nine element integer array foo may be logically represented as;                                                        
         </b></h2>
         <img src="Array.png"class="center">
-        <h2><b>In this 1.1 diagram elements are the studen's marks and indexes are the memory location where student's marks are alloted.</b></h2>
+        <h2><b>In this 1.1 diagram elements and indexes are pointed</b></h2>
+        <h2><b>1.In this structure each blank panel represents an element of the array</b></h2>
+        <h2><b>2.In this case, these are values of type int. These elements are numbered from 0 to 8, with 0 being the first while 8 being the last; In C++, the index of the first array element is always zero. As expected, an n array must be declared prior its use. A typical declaration for an array in C++ is:
 
+ datatype variable name [elements];
+<img src="dec1.png"class="center"width="250" height="250">
+where type is a valid type (as example: int, float ...), variablename is a valid identifier and the elements field (which is always enclosed in square brackets []), specifies the size of the array.
+
+Thus, the array, with nine elements of type int, can be declared as:
+<img src="dec.png"class="center"width="100" height="280">
+</b></h2>
+<h2><b></b></h2>
+         <h2><b></b></h2>
+         <h2><b> <u>Primitive Data structure:</u> The primitive data structures are primitive data types. The int, char, float, double, and pointer are the primitive data structures.These data structures can hold a single value.The primitive data structured are:Integer ,char, float, pointer etc.</b></h2>
+         <h2><b> <u>Non Primitive Data structure</u>:Non Primitive Data structures are derived from primitive Data structures.These datatypes are used to store group of values.The non-primitive data structures are:Arrays,Stack,Queue,Tree,Graph etc.</b></h2>
 
          <img src="Diag.png"class="center">
 <h2><b></b></h2>
@@ -136,7 +271,7 @@
   <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
     Next Topics
   </a>
-  <a href="#" class="list-group-item list-group-item-action"></a>
+  <a href="#" class="list-group-item list-group-item-action">Array</a>
   <a href="#" class="list-group-item list-group-item-action">Linked List</a>
   <a href="#" class="list-group-item list-group-item-action">Stack</a>
   <a href="#" class="list-group-item list-group-item-action">Queue</a>
